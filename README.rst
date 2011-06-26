@@ -33,3 +33,11 @@ License
 
 This program is a free software, licensed under `GNU AGPL 3 <http://www.gnu.org/licenses/agpl-3.0.html>`_.
 
+Donations
+=========
+
+If you like this program, please `Flattr it <https://flattr.com/thing/323792/sendKindle>`_.
+
+.. image:: http://api.flattr.com/button/flattr-badge-large.png
+   :target: https://flattr.com/thing/323792/sendKindle
+
