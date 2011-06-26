@@ -16,7 +16,7 @@ setup(name='sendKindle',
       keywords='commandline Kindle email',
       license='GNU Affero GPL v3',
       url='https://github.com/kparal/sendKindle',
-      download_url='https://github.com/kparal/sendKindle/archives/master',
+      download_url='https://github.com/kparal/sendKindle/downloads',
       classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Environment :: Console',
