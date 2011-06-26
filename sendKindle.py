@@ -149,10 +149,15 @@ class SendKindle:
         return attachment
 
 
-if __name__ == '__main__':
+def main():
+    '''Run the main program'''
     try:
         kindle = SendKindle()
         kindle.send_mail()
     except KeyboardInterrupt as e:
         print >> sys.stderr, 'Program interrupted, exiting...'
         sys.exit(10)
+
+if __name__ == '__main__':
+        main()
+
