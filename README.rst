@@ -4,6 +4,8 @@
 
 CLI tool for sending files via email to your Kindle device.
 
+This program is maintained, but not further developed. Bugs will be fixed, but no new features will be added. If you want to work on this program, don't hesitate to contact me, I will gladly assign you to the development team.
+
 Running
 =======
 
