@@ -33,7 +33,7 @@ That will find, download and install the latest available version of the program
 License
 =======
 
-This program is a free software, licensed under `GNU AGPL 3 <http://www.gnu.org/licenses/agpl-3.0.html>`_.
+This program is a free software, licensed under `GNU AGPL 3+ <http://www.gnu.org/licenses/agpl-3.0.html>`_.
 
 Donations
 =========
