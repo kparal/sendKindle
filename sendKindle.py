@@ -99,7 +99,7 @@ class SendKindle:
         if options.password:
             self.smtp_password = options.password
         if not args:
-            parser.error('No files provided as arguments!')
+            parser.error('No files provided as arguments! See --help.')
         self.files = args
 
     def check_args(self):
