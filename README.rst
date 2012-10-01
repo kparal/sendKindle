@@ -43,3 +43,8 @@ If you like this program, please `Flattr it <https://flattr.com/thing/323792/sen
 .. image:: http://api.flattr.com/button/flattr-badge-large.png
    :target: https://flattr.com/thing/323792/sendKindle
 
+Contact
+=======
+
+Visit program homepage at:
+https://github.com/kparal/sendKindle
