@@ -35,7 +35,7 @@ from email.MIMEMultipart import MIMEMultipart
 from email.MIMEText import MIMEText
 from email.generator import Generator
 
-_version = '2'
+_version = '2.1'
 
 
 class SendKindle:
