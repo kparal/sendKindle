@@ -22,17 +22,17 @@ Author: Kamil Páral <kamil.paral /at/ gmail.com>
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import ConfigParser
+import configparser
 import optparse
 import os
 import smtplib
 import sys
 import traceback
-from StringIO import StringIO
+from io import StringIO
 from email import encoders
-from email.MIMEBase import MIMEBase
-from email.MIMEMultipart import MIMEMultipart
-from email.MIMEText import MIMEText
+from email.mime.base import MIMEBase
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 from email.generator import Generator
 
 _version = '2.1'
@@ -89,13 +89,13 @@ convert = False'''
             traceback.print_exc()
             message = ('Error creating a new config file, maybe wrong '
                        'permissions?')
-            print >> sys.stderr, message
+            print(message, file=sys.stderr)
             sys.exit(4)
         else:
             message = ('A new config file created in: %s\n'
                 'Please edit it, provide correct values and run the program '
                 'again.' % self.conffile)
-            print >> sys.stderr, message
+            print(message, file=sys.stderr)
             sys.exit(5)
 
 
@@ -103,7 +103,7 @@ convert = False'''
         '''Parse the config file. Create a new one if needed.'''
 
         self.create_config()
-        config = ConfigParser.SafeConfigParser()
+        config = configparser.SafeConfigParser()
         try:
             if not config.read([self.conffile]):
                 raise IOError('%s could not be read' % self.conffile)
@@ -120,11 +120,11 @@ convert = False'''
                 # prefer value from cmdline option
                 self.convert = (self.convert or
                                 config.getboolean('Default', 'convert'))
-        except (IOError, ConfigParser.Error, ValueError):
+        except (IOError, configparser.Error, ValueError):
             traceback.print_exc()
             message = ("Your config file could not be read or contains "
                        "invalid values: %s" % self.conffile)
-            print >> sys.stderr, message
+            print(message, file=sys.stderr)
             sys.exit(3)
 
 
@@ -190,10 +190,10 @@ convert = False'''
             message = ('Communication with your SMTP server failed. Maybe '
                        'wrong connection details? Check exception details and '
                        'your config file: %s' % self.conffile)
-            print >> sys.stderr, message
+            print(message, file=sys.stderr)
             sys.exit(7)
 
-        print('Sent email to %s' % self.kindle_email)
+        print(('Sent email to %s' % self.kindle_email))
 
 
     def get_attachment(self, file_path):
@@ -213,7 +213,7 @@ convert = False'''
             traceback.print_exc()
             message = ('The requested file could not be read. Maybe wrong '
                        'permissions?')
-            print >> sys.stderr, message
+            print(message, file=sys.stderr)
             sys.exit(6)
 
 
@@ -223,7 +223,7 @@ def main():
         kindle = SendKindle()
         kindle.send_mail()
     except KeyboardInterrupt:
-        print >> sys.stderr, 'Program interrupted, exiting...'
+        print('Program interrupted, exiting...', file=sys.stderr)
         sys.exit(10)
 
 
