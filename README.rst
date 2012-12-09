@@ -4,8 +4,6 @@
 
 CLI tool for sending files via email to your Kindle device.
 
-This program is maintained, but not further developed. Bugs will be fixed, but no new features will be added. If you want to work on this program, don't hesitate to contact me, I will gladly assign you to the development team.
-
 Running
 =======
 
@@ -48,3 +46,5 @@ Contact
 
 Visit program homepage at:
 https://github.com/kparal/sendKindle
+
+Please report all bugs to the `issue tracker <https://github.com/kparal/sendKindle/issues>`_, but don't request new features unless you have a patch for it. This is a small personal project and I don't plan to spend much more time on it. I will gladly merge your patches if they look reasonable.
