@@ -20,11 +20,11 @@ or by::
 Installation
 ============
 
-You can install this tool using `distutils <http://docs.python.org/install/index.html#install-index>`_, `setuptools <http://peak.telecommunity.com/DevCenter/setuptools>`_ or `pip <http://pip.openplans.org/>`_ and have it in your PATH that way.
+You can install this tool using `distutils <http://docs.python.org/2/install/index.html#the-new-standard-distutils>`_, `easy_install <http://peak.telecommunity.com/DevCenter/EasyInstall>`_ or `pip <http://pip.openplans.org/>`_ and have it in your PATH that way.
 
 The recommended way::
 
-  # easy_install -U sendKindle
+  # pip install sendKindle
   
 That will find, download and install the latest available version of the program.
 
