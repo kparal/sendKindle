@@ -23,6 +23,7 @@ Author: Kamil Páral <kamil.paral /at/ gmail.com>
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import ConfigParser
+import getpass
 import optparse
 import os
 import smtplib
@@ -137,7 +138,8 @@ convert = False'''
                                        description=description)
         self.parser = parser
         parser.add_option('--password', help=('Use provided password instead '
-            'of smtp_password value from your config file'))
+            'of smtp_password value from your config file. If you provide '
+            "neither of these, you'll be asked interactively."))
         parser.add_option('-c', '--convert', action='store_true',
             default=False, help=('Ask Kindle service to convert the documents '
             'to Kindle format (mainly for PDFs) [default: %default]'))
@@ -153,8 +155,8 @@ convert = False'''
 
     def check_args(self):
         if not self.smtp_password:
-            self.parser.error('Missing option (config file or command line): '
-                              'smtp_password')
+            self.smtp_password = getpass.getpass('Password for %s: '
+                                                 % self.user_email)
 
 
     def send_mail(self):
