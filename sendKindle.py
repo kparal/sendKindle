@@ -116,7 +116,9 @@ convert = False'''
             if config.has_option('Default', 'smtp_password'):
                 # prefer value from cmdline option
                 self.smtp_password = (self.smtp_password or
-                                      config.get('Default', 'smtp_password'))
+                                      config.get('Default', 'smtp_password') or
+                                      getpass.getpass('Password for %s: ' %
+                                                            self.user_email))
             if config.has_option('Default', 'convert'):
                 # prefer value from cmdline option
                 self.convert = (self.convert or
