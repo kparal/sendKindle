@@ -13,9 +13,9 @@ You can run the tool directly simply by::
 
 or by::
 
-  $ python sendKindle.py FILE...
+  $ python3 sendKindle.py FILE...
 
-(use --help option of course if you don't know this tool yet)
+(use ``--help`` option of course if you don't know this tool yet)
 
 Installation
 ============
@@ -24,8 +24,8 @@ You can install this tool using `distutils <http://docs.python.org/2/install/ind
 
 The recommended way::
 
-  # pip install sendKindle
-  
+  # pip3 install --user sendKindle
+
 That will find, download and install the latest available version of the program.
 
 License
