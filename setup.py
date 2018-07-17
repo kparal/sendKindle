@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 from setuptools import setup
 import sendKindle
 
@@ -9,8 +7,7 @@ setup(name='sendKindle',
       entry_points = {
         'console_scripts': ['sendKindle = sendKindle:main'],
       },
-      author='Kamil Paral',
-      author_email='kamil.paral@gmail.com',
+      author='Kamil Páral',
       description='CLI tool for sending files via email to your Kindle device',
       long_description='Configure your email and then send any files provided as program arguments as email attachments to your Kindle device.',
       keywords='commandline Kindle email',
@@ -25,7 +22,7 @@ setup(name='sendKindle',
         'Natural Language :: English',
         'Operating System :: POSIX',
         'Operating System :: POSIX :: Linux',
-        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 3',
         'Topic :: Communications :: Email',
         'Topic :: Utilities',
       ])
