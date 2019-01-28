@@ -169,14 +169,11 @@ convert = False'''
 
         # send email
         try:
-            if self.smtp_port == 465:
-                mail_server = smtplib.SMTP_SSL(host=self.smtp_server,
-                        port=self.smtp_port)
-            elif self.smtp_port == 587:
+            if self.smtp_port == 587:
                 mail_server = smtplib.SMTP(host=self.smtp_server, port=self.smtp_port)
                 mail_server.starttls()
             else:
-                raise Exception('port {} not supported'.format(self.smtp_port))
+                mail_server = smtplib.SMTP_SSL(host=self.smtp_server, port=self.smtp_port)
 
             mail_server.login(self.smtp_login, self.smtp_password)
             mail_server.sendmail(self.user_email, self.kindle_email, msg)
@@ -217,6 +214,7 @@ def main():
     '''Run the main program'''
     try:
         kindle = SendKindle()
+        kindle.send_mail()
     except KeyboardInterrupt:
         print('Program interrupted, exiting...', file=sys.stderr)
         sys.exit(10)
