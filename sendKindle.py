@@ -99,7 +99,10 @@ convert = False'''
             self.smtp_port = config.getint('Default', 'smtp_port')
             self.smtp_login = config.get('Default', 'smtp_login')
             self.user_email = config.get('Default', 'user_email')
-            self.kindle_email = config.get('Default', 'kindle_email')
+            if config.has_option('Default', 'kindle_email'):
+                # prefer value from cmdline option
+                self.kindle_email = (self.kindle_email or
+                                      config.get('Default', 'kindle_email'))
             if config.has_option('Default', 'smtp_password'):
                 # prefer value from cmdline option
                 self.smtp_password = (self.smtp_password or
@@ -124,6 +127,8 @@ convert = False'''
         parser = optparse.OptionParser(usage=usage, version=_version,
                                        description=description)
         self.parser = parser
+        parser.add_option('--email', help=('Use provided email instead '
+            'of kindle_email value from your config file.'))
         parser.add_option('--password', help=('Use provided password instead '
             'of smtp_password value from your config file. If you provide '
             "neither of these, you'll be asked interactively."))
@@ -133,6 +138,8 @@ convert = False'''
         (options, args) = parser.parse_args()
 
         self.convert = options.convert
+        if options.email:
+            self.kindle_email = options.email
         if options.password:
             self.smtp_password = options.password
         if not args:
