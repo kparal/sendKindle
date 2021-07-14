@@ -2,6 +2,18 @@
  sendKindle
 ============
 
+----
+
+.. image:: http://unmaintained.tech/badge.svg
+  :target: http://unmaintained.tech/
+  :alt: No Maintenance Intended
+
+**sendKindle is no longer maintained!**
+
+If you feel that sendKindle should be resurrected, please fork this project and work on your improvements. I'll gladly redirect people to your new version.
+
+----
+
 CLI tool for sending files via email to your Kindle device.
 
 Running
