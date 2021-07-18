@@ -91,7 +91,7 @@ convert = False'''
         '''Parse the config file. Create a new one if needed.'''
 
         self.create_config()
-        config = configparser.SafeConfigParser()
+        config = configparser.ConfigParser()
         try:
             if not config.read([self.conffile]):
                 raise IOError('%s could not be read' % self.conffile)
@@ -173,7 +173,7 @@ convert = False'''
                 mail_server = smtplib.SMTP(host=self.smtp_server, port=self.smtp_port)
                 mail_server.starttls()
             else:
-                mail_server = smtplib.SMTP_SSL(host=self.smtp_server, port=self.smtp_port)
+                mail_server = smtplib.SMTP(host=self.smtp_server, port=self.smtp_port)
 
             mail_server.login(self.smtp_login, self.smtp_password)
             mail_server.sendmail(self.user_email, self.kindle_email, msg)
